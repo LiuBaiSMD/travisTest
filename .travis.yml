@@ -1,0 +1,18 @@
+os: osx
+language: go
+go:
+- 1.12.x
+env:
+- GO111MODULE=auto
+services: consul
+install:
+- go get -t ./...
+- go get -u -v github.com/hashicorp/consul
+- go get -u -v github.com/micro/protoc-gen-micro
+- go get -u -v github.com/micro/go-micro
+- go get -u -v github.com/micro/micro
+- go get -u -v github.com/nats-io/nats-server
+before_script:
+- consul agent -dev
+script:
+- go test -v -mod=vendor ./...
