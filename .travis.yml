@@ -21,7 +21,7 @@ script:
 - cd /home/travisTest
 - pwd
 - docker run consul version
-- docker run consul agent -dev -http-port=8500  -client=127.0.0.1 -bind=127.0.0.1
+- docker run -d -p 8500:8500 consul agent -node=node4 -bind=0.0.0.0 -client=0.0.0.0 -datacenter=dc1 -ui
 - cd service-config-push
 - pwd
 - go mod tidy
