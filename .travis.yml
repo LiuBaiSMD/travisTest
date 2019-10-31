@@ -15,7 +15,7 @@ before_script:
 script:
 - pwd
 - cd ..
-- mv ./travisTest /home
+- sudo mv ./travisTest /home
 - cd /home/travisTest
 - pwd
 #_ export RUN_DOCKER_MODE=on
