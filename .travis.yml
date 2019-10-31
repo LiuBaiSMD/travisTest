@@ -6,13 +6,13 @@ go:
 - 1.13.x
 env:
 - GO111MODULE=on
-services: consul
-#services:
-#    - docker
+#services: consul
+services:
+    - docker
 install:
 - go get github.com/micro/protoc-gen-micro
-before_script:
-- docker run -d --name=consul2 consul
+#before_script:
+#- docker run -d --name=consul2 consul
 #- consul agent -dev
 script:
 - pwd
@@ -20,8 +20,8 @@ script:
 - sudo mv ./travisTest /home
 - cd /home/travisTest
 - pwd
-- consul version
-- consul agent -dev -http-port=8500  -client=127.0.0.1 -bind=127.0.0.1
+- docker run consul version
+- docker run consul agent -dev -http-port=8500  -client=127.0.0.1 -bind=127.0.0.1
 - cd service-config-push
 - pwd
 - go mod tidy
