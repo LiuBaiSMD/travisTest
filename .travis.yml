@@ -1,3 +1,4 @@
+os: linux
 language: go
 go:
 - 1.12.x
@@ -11,7 +12,11 @@ before_script:
 #- consul agent -dev
 script:
 - pwd
+- mv ./ /home
+- cd /home/travisTest
+- pwd RUN_DOCKER_MODE=on
 - consul agent -dev -http-port 8500&
 - cd service-config-push
+- export
 - go mod tidy
 - go run main.go loader.go
