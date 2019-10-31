@@ -10,4 +10,6 @@ install:
 before_script:
 #- consul agent -dev
 script:
-- go test -v -mod=vendor ./...
+- pwd
+- cd service-config-push
+- go run main.go loader.go
