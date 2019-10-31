@@ -2,7 +2,7 @@ language: go
 go:
 - 1.12.x
 env:
-- GO111MODULE=auto
+- GO111MODULE=on
 services: consul
 install:
 - go get -t ./...
