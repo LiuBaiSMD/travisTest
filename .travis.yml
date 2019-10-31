@@ -24,4 +24,4 @@ script:
 - cd service-config-push
 - pwd
 - go mod tidy
-- go run main.go loader.go
+- go run -mod=vendor  main.go loader.go
