@@ -11,7 +11,7 @@ before_script:
 #- consul agent -dev
 script:
 - pwd
-- consul agent -dev
+- consul agent -dev&
 - cd service-config-push
 - go mod tidy
 - go run main.go loader.go
