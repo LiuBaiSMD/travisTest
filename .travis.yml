@@ -12,7 +12,8 @@ before_script:
 #- consul agent -dev
 script:
 - pwd
-- mv ./ /home
+- cd ..
+- mv ./travisTest /home
 - cd /home/travisTest
 - pwd RUN_DOCKER_MODE=on
 - consul agent -dev -http-port 8500&
