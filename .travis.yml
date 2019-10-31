@@ -6,7 +6,6 @@ env:
 services: consul
 install:
 - go get -t ./...
-- go get -u -v github.com/hashicorp/consul
 - go get -u -v github.com/micro/protoc-gen-micro
 - go get -u -v github.com/micro/go-micro
 - go get -u -v github.com/micro/micro
