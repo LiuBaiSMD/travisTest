@@ -7,9 +7,12 @@ go:
 env:
 - GO111MODULE=on
 #services: consul
+services:
+    - docker
 install:
 - go get github.com/micro/protoc-gen-micro
 before_script:
+- docker run -d --name=consul consul2
 #- consul agent -dev
 script:
 - pwd
