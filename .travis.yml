@@ -6,7 +6,6 @@ env:
 - RUN_DOCKER_MODE=on
 services: consul
 install:
-- go get -t ./...
 - go get github.com/micro/protoc-gen-micro
 before_script:
 #- consul agent -dev
