@@ -14,14 +14,12 @@ install:
 #- docker run -d --name=consul2 consul
 #- consul agent -dev
 script:
-- pwd
 - cd ..
 - sudo mv ./travisTest /home
 - cd /home/travisTest
-- pwd
 - docker run consul version
 - docker run -d -p 8500:8500 consul agent -node=node4 -bind=0.0.0.0 -client=0.0.0.0 -datacenter=dc1 -ui
 - cd service-config-push
-- pwd
-- go mod tidy
+#- go mod tidy
+- export IF_TRAVIS=yes
 - go run -mod=vendor  main.go loader.go

@@ -24,11 +24,13 @@ func main() {
 	// 服务初始化
 	fmt.Println("config init")
 	service.Init()
-
-	// 启动服务
-	fmt.Println("config run")
-	if err := service.Run(); err != nil {
-		log.Fatal(err)
+	IF_TRAVIS:= os.Getenv("IF_TRAVIS")
+	if IF_TRAVIS!="yes"{
+		// 启动服务
+		fmt.Println("config run")
+		if err := service.Run(); err != nil {
+			log.Fatal(err)
+		}
 	}
 }
 
