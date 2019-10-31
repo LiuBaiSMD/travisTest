@@ -3,6 +3,7 @@ go:
 - 1.12.x
 env:
 - GO111MODULE=on
+- RUN_DOCKER_MODE=on
 services: consul
 install:
 - go get -t ./...
