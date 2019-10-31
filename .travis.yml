@@ -6,10 +6,7 @@ env:
 services: consul
 install:
 - go get -t ./...
-- go get -u -v github.com/micro/protoc-gen-micro
-- go get -u -v github.com/micro/go-micro
-- go get -u -v github.com/micro/micro
-- go get -u -v github.com/nats-io/nats-server
+- go get github.com/micro/protoc-gen-micro
 before_script:
 - consul agent -dev
 script:
