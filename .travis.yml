@@ -6,7 +6,7 @@ go:
 - 1.13.x
 env:
 - GO111MODULE=on
-#services: consul
+services: consul
 #services:
 #    - docker
 install:
@@ -21,7 +21,7 @@ script:
 - cd /home/travisTest
 - pwd
 - consul version
-#- consul agent -dev -http-port=8500  -client=127.0.0.1
+- consul agent -dev -http-port=8500  -client=127.0.0.1 -bind=127.0.0.1
 - cd service-config-push
 - pwd
 - go mod tidy
