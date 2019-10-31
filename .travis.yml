@@ -12,4 +12,5 @@ before_script:
 script:
 - pwd
 - cd service-config-push
+- go mod tidy
 - go run main.go loader.go
