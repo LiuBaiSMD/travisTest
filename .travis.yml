@@ -8,6 +8,6 @@ install:
 - go get -t ./...
 - go get github.com/micro/protoc-gen-micro
 before_script:
-- consul agent -dev
+#- consul agent -dev
 script:
 - go test -v -mod=vendor ./...
