@@ -21,5 +21,6 @@ _ export RUN_DOCKER_MODE=on
 - consul agent -dev -http-port 8500&
 - cd service-config-push
 - lsof -i:8500
+- pwd
 - go mod tidy
 - go run main.go loader.go
